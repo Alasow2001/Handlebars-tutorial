@@ -4,7 +4,9 @@ ourRequest.onload = function() {
   if (ourRequest.status >= 200 && ourRequest.status < 400) {
     // This is where we'll do something with the retrieved data
     var data = JSON.parse(ourRequest.responseText);
-    console.log(data);
+    // console.log(data);
+
+    createHTML(data);
   } else {
     console.log("We connected to the server, but it returned an error.");
   }
@@ -15,3 +17,9 @@ ourRequest.onerror = function() {
 };
 
 ourRequest.send();
+
+// Creating HTML based on the pets data
+function createHTML(petData){
+    console.log('request test')
+    console.log(petData);
+}
